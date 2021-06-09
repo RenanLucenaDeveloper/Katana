@@ -1,0 +1,98 @@
+body, ul {
+    margin: 0;
+    background-color: #EEEEEE;
+    color: #020413;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+text-decoration: none;
+color: #020413;
+}
+
+ul {
+list-style: none;
+}
+
+* {
+box-sizing: border-box;
+}
+
+#header {
+width: 100%;
+padding: 1rem 2rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+#menu {
+display: block;
+visibility: hidden;
+position: absolute;
+top: 69px;
+right: 0;
+z-index: 1000;
+/*  background: #DADADA; */
+height: 0;
+overflow: hidden;
+transition: .6s;
+text-transform: uppercase;
+text-align: end;
+line-height: 2em;
+}
+
+#nav.active #menu{
+display: flex;
+flex-direction: column;
+height: 150px;
+visibility: visible;
+padding-right: 2em;
+}
+
+#logo {
+font-size: 1.5em;
+font-weight: bold;
+}
+
+#menu ul li {
+font-size: 1.125em;
+}
+
+#btn-mobile {
+display: flex;
+flex-direction: column;
+border: none;
+border-top: 2px solid #020413;
+width: 20px;
+cursor: pointer;
+background: none;
+padding: 0;
+transition: .2s;
+}
+
+#btn-mobile::after, #btn-mobile::before {
+content: "";
+display: block;
+background-color: currentColor;
+width: 20px;
+height: 2px;
+margin-top: 5px;
+position: relative;
+transition: .2s;
+}
+
+#nav.active #btn-mobile {
+border-top-color: transparent;
+}
+
+#nav.active #btn-mobile::before {
+transform: rotate(135deg);
+}
+
+#nav.active #btn-mobile::after {
+transform: rotate(-135deg);
+top: -7px;
+}
+
